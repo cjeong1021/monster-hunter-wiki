@@ -3,6 +3,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import axios from 'axios';
+import { Routes, Route, Link } from 'react-router-dom';
+import Details from './components/Details';
+import Home from './components/Home';
 
 function App() {
   // set states for monster list, filtered list and filter variable
@@ -19,12 +22,19 @@ function App() {
         monster.name.toLowerCase().includes(e.target.value.toLowerCase())
       );
       setMatchedMonsters(filteredMonsters);
-    } else if (filter === 'location') {
-      let filteredMonsters = monsters.filter((monster) =>
-        monster.location.name[0]
-          .toLowerCase()
-          .includes(e.target.value.toLowerCase())
-      );
+    } else if (filter === 'locations') {
+      let filteredMonsters = monsters.filter((monster) => {
+        let locations = monster.locations.filter((location) => {
+          return location.name
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase());
+        });
+
+        console.log(locations);
+        if (locations.length !== 0) {
+          return monster;
+        }
+      });
       setMatchedMonsters(filteredMonsters);
     } else {
       let filteredMonsters = monsters.filter((monster) =>
@@ -49,7 +59,7 @@ function App() {
 
   return (
     <div className='App'>
-      Monster Hunter Wiki
+      <Link to='/'>Monster Hunter Wiki</Link>
       <Sidebar
         monsters={monsters}
         filter={filter}
@@ -57,6 +67,16 @@ function App() {
         filterCategory={filterCategory}
         matchedMonsters={matchedMonsters}
       />
+
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route
+            path='/monster/:id'
+            element={<Details matchedMonsters={matchedMonsters} />}
+          />
+        </Routes>
+      </main>
     </div>
   );
 }
