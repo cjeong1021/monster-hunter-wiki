@@ -30,7 +30,6 @@ function App() {
             .includes(e.target.value.toLowerCase());
         });
 
-        console.log(locations);
         if (locations.length !== 0) {
           return monster;
         }
@@ -59,7 +58,35 @@ function App() {
 
   return (
     <div className='App'>
-      <Link to='/'>Monster Hunter Wiki</Link>
+      <div class='header'>
+        <div class='home-menu pure-menu pure-menu-horizontal pure-menu-fixed'>
+          <Link to='/'>
+            <a class='pure-menu-heading' id='header-icon' href='/'>
+              Monster Hunter Wiki
+            </a>
+          </Link>
+
+          <ul class='pure-menu-list'>
+            <li class='pure-menu-item'>
+              <a
+                href='https://monsterhunterworld.wiki.fextralife.com/Monster+Hunter+World+Wiki'
+                class='pure-menu-link'
+              >
+                Wiki
+              </a>
+            </li>
+            <li class='pure-menu-item'>
+              <a
+                href='https://github.com/cjeong1021/monster-hunter-wiki'
+                class='pure-menu-link'
+              >
+                Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <Link to='/' className='div4'></Link>
       <Sidebar
         monsters={monsters}
         filter={filter}
@@ -68,12 +95,12 @@ function App() {
         matchedMonsters={matchedMonsters}
       />
 
-      <main>
+      <main className='div3'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route
             path='/monster/:id'
-            element={<Details matchedMonsters={matchedMonsters} />}
+            element={<Details monsters={monsters} />}
           />
         </Routes>
       </main>

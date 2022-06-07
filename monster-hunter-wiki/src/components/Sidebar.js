@@ -5,7 +5,6 @@ import MonsterList from './MonsterList';
 function Sidebar(props) {
   return (
     <div>
-      Sidebar
       <Filter
         handleFilterChange={props.handleFilterChange}
         filterCategory={props.filterCategory}
