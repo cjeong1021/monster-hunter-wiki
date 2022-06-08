@@ -49,6 +49,7 @@ function Details(props) {
 
     // Filter monster data to find monsters with similar location or species
     function relatedHandle(e) {
+      e.preventDefault();
       setRelatedFilter(e.target.getAttribute('value'));
       if (relatedFilter === 'locations') {
         var filteredMonsters = props.monsters.filter((monster) => {
