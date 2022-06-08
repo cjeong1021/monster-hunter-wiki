@@ -13,6 +13,8 @@ function Sidebar(props) {
         monsters={props.monsters}
         matchedMonsters={props.matchedMonsters}
         filter={props.filter}
+        monsterHistory={props.monsterHistory}
+        setMonsterHistory={props.setMonsterHistory}
       />
     </div>
   );

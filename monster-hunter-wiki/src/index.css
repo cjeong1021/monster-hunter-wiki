@@ -114,8 +114,9 @@ img {
 
 .details-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1/2fr 1/2fr 1fr;
+  width: 150%;
+  grid-template-columns: 35% 35% 35%;
+  grid-template-rows: 100px 100px 1/2fr 1fr;
   align-items: center;
 }
 
@@ -138,6 +139,16 @@ img {
 .weakness {
   grid-column: 1;
   grid-row: 3;
+}
+
+.resistances {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.related {
+  grid-column: 3;
+  grid-row: 1 / span 3;
 }
 
 .location {
@@ -180,4 +191,47 @@ li {
 
 .pure-input-rounded {
   margin: 5px;
+  z-index: 10;
+}
+
+a.button1 {
+  display: inline-block;
+  font-size: 25px;
+  padding: 5px;
+  border: 0.1em solid black;
+  margin-left: 0.5em;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+}
+a.button1:hover {
+  color: white;
+  background-color: #000000;
+}
+.faves {
+  padding: 10px;
+  background-color: white;
+  color: black;
+}
+
+.pure-menu-selected > .pure-menu-link {
+  color: white !important;
+}
+
+.pure-menu-selected > .pure-menu-link:hover {
+  color: black !important;
+}
+
+.pure-menu-item {
+  list-style: none;
+}
+
+.related-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

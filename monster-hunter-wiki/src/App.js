@@ -12,6 +12,7 @@ function App() {
   const [monsters, setMonsters] = useState([]);
   const [matchedMonsters, setMatchedMonsters] = useState([]);
   const [filter, setFilter] = useState('name');
+  const [monsterHistory, setMonsterHistory] = useState([]);
 
   // handle filter change in filter component, set matchedMonsters state based on filter values
   const handleFilterChange = (e) => {
@@ -48,6 +49,19 @@ function App() {
     setFilter(e.target.value);
   };
 
+  // take monsterHistory state and make a dropdown menu that links to monster details
+  let favorited = monsterHistory.map((monster) => {
+    return (
+      <Link to={'/monster/' + monster.id}>
+        <li class='pure-menu-item'>
+          <a href='#' class='pure-menu-link'>
+            {monster.name}
+          </a>
+        </li>
+      </Link>
+    );
+  });
+
   // get API data and set states with data
   useEffect(() => {
     axios.get('https://mhw-db.com/monsters').then((res) => {
@@ -58,27 +72,32 @@ function App() {
 
   return (
     <div className='App'>
-      <div class='header'>
-        <div class='home-menu pure-menu pure-menu-horizontal pure-menu-fixed'>
+      <div className='header'>
+        <div className='home-menu pure-menu pure-menu-horizontal pure-menu-fixed'>
           <Link to='/'>
-            <a class='pure-menu-heading' id='header-icon' href='/'>
+            <a className='pure-menu-heading' id='header-icon' href='/'>
               Monster Hunter Wiki
             </a>
           </Link>
-
-          <ul class='pure-menu-list'>
-            <li class='pure-menu-item'>
+          <li class='pure-menu-item pure-menu-has-children pure-menu-allow-hover'>
+            <a href='#' id='menuLink1' class='pure-menu-link'>
+              Favorited
+            </a>
+            <ul class='pure-menu-children'>{favorited}</ul>
+          </li>
+          <ul className='pure-menu-list'>
+            <li className='pure-menu-item'>
               <a
                 href='https://monsterhunterworld.wiki.fextralife.com/Monster+Hunter+World+Wiki'
-                class='pure-menu-link'
+                className='pure-menu-link'
               >
                 Wiki
               </a>
             </li>
-            <li class='pure-menu-item'>
+            <li className='pure-menu-item'>
               <a
                 href='https://github.com/cjeong1021/monster-hunter-wiki'
-                class='pure-menu-link'
+                className='pure-menu-link'
               >
                 Github
               </a>
@@ -93,6 +112,8 @@ function App() {
         handleFilterChange={handleFilterChange}
         filterCategory={filterCategory}
         matchedMonsters={matchedMonsters}
+        monsterHistory={monsterHistory}
+        setMonsterHistory={setMonsterHistory}
       />
 
       <main className='div3'>
@@ -100,7 +121,13 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route
             path='/monster/:id'
-            element={<Details monsters={monsters} />}
+            element={
+              <Details
+                monsters={monsters}
+                monsterHistory={monsterHistory}
+                setMonsterHistory={setMonsterHistory}
+              />
+            }
           />
         </Routes>
       </main>
