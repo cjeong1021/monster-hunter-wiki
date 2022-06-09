@@ -33,11 +33,11 @@ Used to get data from the Monster Hunter API.
 
 The wireframe for the website is modelled after a simple one page app where all the info is displayed on one page. There is a sidebar where the list of data and input field are, allowing users to search through data pulled from the API. Then a user can select a monster and display the data in the Details section.
 
-![Wireframe](https://vectr.com/design/editor/40d875b3-96c2-42dc-962c-31b5fd403b1a)
+![Wireframes](https://user-images.githubusercontent.com/14892355/172871998-eb765bad-91f2-4ef2-94b3-cbcc3660cf69.jpeg)
 
 This is the Component tree for the app. The majority of the data, states and functions will live in the App component and be passed down to the Sidebar and Details component. Sidebar will parse the data and display a list of monsters. Then React Router will be used to direct to URLs with the monster IDs, which the Details component will use params to filter the data to search for the selected monster.
 
-![Component Tree](https://vectr.com/design/editor/40d875b3-96c2-42dc-962c-31b5fd403b1a)
+![Component Tree](https://user-images.githubusercontent.com/14892355/172872062-3bbf59b3-e91b-4dd0-94b7-c717eb94b9f6.jpeg)
 
 ### MVP/PostMVP - 5min
 
