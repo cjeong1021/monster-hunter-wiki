@@ -35,7 +35,7 @@ The wireframe for the website is modelled after a simple one page app where all 
 
 ![Wireframes](https://user-images.githubusercontent.com/14892355/172871998-eb765bad-91f2-4ef2-94b3-cbcc3660cf69.jpeg)
 
-This is the Component tree for the app. The majority of the data, states and functions will live in the App component and be passed down to the Sidebar and Details component. Sidebar will parse the data and display a list of monsters. Then React Router will be used to direct to URLs with the monster IDs, which the Details component will use params to filter the data to search for the selected monster.
+This is the planned Component tree for the app. The majority of the data, states and functions will live in the App component and be passed down to the Sidebar and Details component. Sidebar will parse the data and display a list of monsters. Then React Router will be used to direct to URLs with the monster IDs, which the Details component will use params to filter the data to search for the selected monster.
 
 ![Component Tree](https://user-images.githubusercontent.com/14892355/172872062-3bbf59b3-e91b-4dd0-94b7-c717eb94b9f6.jpeg)
 
