@@ -14,7 +14,7 @@ This website is not meant to be a comprehensive tool, for more in-depth informat
 ## Technologies Used
 
 - HTML, CSS
-- Pure CSS library
+- [Pure CSS library](https://purecss.io/)
 - Flexbox
 - CSS Grid
 
@@ -39,19 +39,7 @@ This is the Component tree for the app. The majority of the data, states and fun
 
 ![Component Tree](https://user-images.githubusercontent.com/14892355/172872062-3bbf59b3-e91b-4dd0-94b7-c717eb94b9f6.jpeg)
 
-### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP. Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
-
-#### MVP EXAMPLE
-
-- Find and use external api
-- Render data on page
-- Allow user to interact with the page
-
-## Additional Libraries
-
-Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc.
+## React Components
 
 ## Code Snippet
 
