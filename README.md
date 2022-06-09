@@ -39,7 +39,15 @@ This is the Component tree for the app. The majority of the data, states and fun
 
 ![Component Tree](https://user-images.githubusercontent.com/14892355/172872062-3bbf59b3-e91b-4dd0-94b7-c717eb94b9f6.jpeg)
 
-## React Components
+## React Components for MVP
+
+The React Component tree has two main branches, one for the Sidebar and one for the Details. Both branches get passed data that is obtained in the App component from the API. The Sidebar handles the data and filters it based on user input, outputting a list of monsters that match the filter criteria. If a user clicks on a monster in the list, it will Route the user to a url with the monster ID in it, which the Details component uses to filter the data passed from App to render information about the clicked monster. 
+
+![Untitled (3)](https://user-images.githubusercontent.com/14892355/172911766-53ccb6f1-32d5-420e-afff-3b2bfbc593bb.svg)
+
+## Extra Features
+
+
 
 ## Code Snippet
 
