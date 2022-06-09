@@ -136,16 +136,6 @@ function Details(props) {
                   Species
                 </a>
               </li>
-              <li className='pure-menu-item'>
-                <a
-                  onClick={relatedHandle}
-                  value='locations'
-                  href='#'
-                  className='pure-menu-link'
-                >
-                  Location
-                </a>
-              </li>
             </ul>
           </div>
           <div className='related-list'>{monsterList}</div>
