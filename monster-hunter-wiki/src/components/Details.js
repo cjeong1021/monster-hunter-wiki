@@ -6,8 +6,7 @@ function Details(props) {
   // useParams gets id of selected monster
   let { id } = useParams();
 
-  // set states for button text, related filter, and filtered monsters
-  const [buttonText, setButtonText] = useState('Add to Favorites');
+  // set states for related filter, and filtered monsters
   const [relatedFilter, setRelatedFilter] = useState('');
   const [filteredMonsters, setFilteredMonsters] = useState([]);
 
@@ -78,20 +77,16 @@ function Details(props) {
       }
     }
 
-    let monsterList = [];
-
-    if (filteredMonsters !== []) {
-      monsterList = filteredMonsters.map((monster) => {
-        return (
-          <Monsters
-            monster={monster}
-            id={monster.id}
-            monsterHistory={props.monsterHistory}
-            setMonsterHistory={props.setMonsterHistory}
-          />
-        );
-      });
-    }
+    let monsterList = filteredMonsters.map((monster) => {
+      return (
+        <Monsters
+          monster={monster}
+          id={monster.id}
+          monsterHistory={props.monsterHistory}
+          setMonsterHistory={props.setMonsterHistory}
+        />
+      );
+    });
 
     return (
       <div>
