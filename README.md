@@ -1,5 +1,8 @@
 # Monster Hunter Wiki
 
+<img width="1512" alt="" src="https://user-images.githubusercontent.com/14892355/173069353-515e6f73-3398-4676-8e10-20688181f49d.png">
+
+
 ## Project Description
 
 Monster Hunter Wiki is a single page app that uses the [Monster Hunter World API](https://docs.mhw-db.com/) and React to display simple and concise info about monsters in the game. Use this app to quickly filter monsters by name, location and species and look up their weaknesses and attributes.
