@@ -1,7 +1,8 @@
 # Monster Hunter Wiki
 
-<img width="1512" alt="" src="https://user-images.githubusercontent.com/14892355/173069353-515e6f73-3398-4676-8e10-20688181f49d.png">
+<img width="900" alt="" src="https://user-images.githubusercontent.com/14892355/173069353-515e6f73-3398-4676-8e10-20688181f49d.png">
 
+<img width="900" alt="Screen Shot 2022-06-10 at 8 59 11 AM" src="https://user-images.githubusercontent.com/14892355/173069561-87794860-e602-4f46-af3a-6355c411d14a.png">
 
 ## Project Description
 
